@@ -1,0 +1,12 @@
+#ifndef _CALGOLIB_ERRORS
+#define _CALGOLIB_ERRORS
+
+#include <string>
+
+namespace cal {
+
+void error(std::string text, int exit_code = 1);
+
+};
+
+#endif

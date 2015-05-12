@@ -1,0 +1,47 @@
+#ifndef _CALGOLIB_IO
+#define _CALGOLIB_IO
+
+#include <string>
+
+namespace cal {
+
+//Interface
+
+template <typename First, typename... Rest>
+void read(First& first, Rest&... rest);
+
+template <typename First, typename... Rest>
+void write(First first, Rest... rest);
+
+//Other
+template <> void read<short> (short& x);
+template <> void read<int> (int& x);
+template <> void read<long> (long& x);
+template <> void read<long long> (long long& x);
+template <> void read<unsigned short> (unsigned short& x);
+template <> void read<unsigned int> (unsigned int& x);
+template <> void read<unsigned long> (unsigned long& x);
+template <> void read<unsigned long long> (unsigned long long& x);
+template <> void read<float> (float& x);
+template <> void read<double> (double& x);
+template <> void read<long double> (long double& x);
+template <> void read<char> (char& x);
+template <> void read<std::string> (std::string& x);
+
+template <> void write<short> (short x);
+template <> void write<int> (int x);
+template <> void write<long> (long x);
+template <> void write<long long> (long long x);
+template <> void write<unsigned short> (unsigned short x);
+template <> void write<unsigned int> (unsigned int x);
+template <> void write<unsigned long> (unsigned long x);
+template <> void write<unsigned long long> (unsigned long long x);
+template <> void write<float> (float x);
+template <> void write<double> (double x);
+template <> void write<long double> (long double x);
+template <> void write<char> (char x);
+template <> void write<std::string> (std::string x);
+
+};
+
+#endif
