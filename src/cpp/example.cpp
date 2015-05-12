@@ -1,8 +1,10 @@
-#include <iostream>
-#include "io.h"
+#include "io"
+
+using namespace cal;
 
 int main() {
-	int x;
-	ext::read(x);
-	std::cout << "read: " << x << std::endl;
+	long double f;
+
+	read(f);
+	write(f / 2);
 }
