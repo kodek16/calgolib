@@ -13,6 +13,9 @@ void read(First& first, Rest&... rest);
 template <typename First, typename... Rest>
 void write(First first, Rest... rest);
 
+void file_io(std::string name);
+void file_io(std::string infile, std::string outfile);
+
 //Other
 template <> void read<short> (short& x);
 template <> void read<int> (int& x);

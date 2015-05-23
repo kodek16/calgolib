@@ -204,3 +204,13 @@ void cal::write(First first, Rest... rest) {
 	write(first);
 	write(rest...);
 }
+
+void cal::file_io(std::string name) {
+	freopen((name + ".in").c_str(), "r", stdin);
+	freopen((name + ".out").c_str(), "w", stdout);
+}
+
+void cal::file_io(std::string infile, std::string outfile) {
+	freopen(infile.c_str(), "r", stdin);
+	freopen(outfile.c_str(), "w", stdout);
+}
