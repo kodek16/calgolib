@@ -1,11 +1,11 @@
-#include "io"
+#include "calgolib"
 
 using namespace cal;
 
 int main() {
 	file_io("input.txt", "output.txt");
 
-	long double f;
+	f80 f;
 
 	read(f);
 	write(f / 2);

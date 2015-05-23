@@ -1,0 +1,11 @@
+#ifndef _CALGOLIB
+#define _CALGOLIB
+
+#if __cplusplus < 201103L
+#error calgolib must be compliled with C++11
+#endif
+
+#include "io"
+#include "primitive_types"
+
+#endif
