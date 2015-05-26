@@ -3,10 +3,12 @@
 using namespace cal;
 
 int main() {
-	file_io("input.txt", "output.txt");
+	mod_int<> x;
+	long long lx = 0;
+	for (int i = 1; i <= 10000; i++) {
+		x += sqr(i);
+		lx += sqr(i);
+	}
 
-	f80 f;
-
-	read(f);
-	write(f / 2);
+	writeln(lx, ' ', x);
 }

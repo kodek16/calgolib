@@ -3,9 +3,12 @@
 
 #if __cplusplus < 201103L
 #error calgolib must be compliled with C++11
-#endif
+#else
 
+#include "math"
 #include "io"
 #include "primitive_types"
+
+#endif
 
 #endif

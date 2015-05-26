@@ -144,12 +144,6 @@ void cal::read<std::string> (std::string& s) {
 	} while (c != ' ' && c != '\t' && c != '\n' && c != EOF);
 }
 
-template <typename First, typename... Rest>
-void cal::read(First& first, Rest&... rest) {
-	read(first);
-	read(rest...);
-}
-
 template <typename Decimal>
 void write_decimal(Decimal x, int max_len) {
 	if (x == 0) {
@@ -168,7 +162,7 @@ void write_decimal(Decimal x, int max_len) {
 		}
 
 		for (int j = i - 1; j >= 0; j--) {
-			pc(num[i]);
+			pc(num[j]);
 		}
 
 		free(num);
@@ -193,16 +187,16 @@ template <> void cal::write<char> (char c) {
 	pc(c);
 }
 
-template <> void cal::write<std::string> (std::string s) {
-	for (const char *str = s.c_str(); *str; str++) {
+template <> void cal::write<const char *> (const char *s) {
+	for (const char *str = s; *str; str++) {
 		pc(*str);
 	}
 }
 
-template <typename First, typename... Rest>
-void cal::write(First first, Rest... rest) {
-	write(first);
-	write(rest...);
+template <> void cal::write<std::string> (std::string s) {
+	for (const char *str = s.c_str(); *str; str++) {
+		pc(*str);
+	}
 }
 
 void cal::file_io(std::string name) {

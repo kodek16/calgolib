@@ -5,18 +5,28 @@
 
 namespace cal {
 
-//Interface
+template <typename First, typename... Rest>
+void read(First& first, Rest&... rest) {
+	read(first);
+	read(rest...);
+}
 
 template <typename First, typename... Rest>
-void read(First& first, Rest&... rest);
+void write(First first, Rest... rest) {
+	write(first);
+	write(rest...);
+}
 
-template <typename First, typename... Rest>
-void write(First first, Rest... rest);
+template <typename... Args>
+void writeln(Args... args) {
+	write(args...);
+	write('\n');
+}
 
+//Opens files "name.in" and "name.out"
 void file_io(std::string name);
 void file_io(std::string infile, std::string outfile);
 
-//Other
 template <> void read<short> (short& x);
 template <> void read<int> (int& x);
 template <> void read<long> (long& x);
@@ -43,6 +53,7 @@ template <> void write<float> (float x);
 template <> void write<double> (double x);
 template <> void write<long double> (long double x);
 template <> void write<char> (char x);
+template <> void write<const char *> (const char *x);
 template <> void write<std::string> (std::string x);
 
 };
